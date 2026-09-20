@@ -2,6 +2,7 @@
 import { Download, FileJson, Import, Laptop, LogOut, Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
 import { useLibrary } from "@/components/layout/library-provider";
 import { Badge } from "@/components/ui/badge";
@@ -32,6 +33,9 @@ function Section({ id, title, description, children }: { id: string; title: stri
 export function SettingsView() {
   const { user, totalCount, folders, tags } = useLibrary();
   const { theme, setTheme } = useTheme();
+  // The saved theme only exists in the browser, so don't mark a button as selected until after hydration.
+  const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
+  const current = mounted ? theme : undefined;
   const router = useRouter();
   const themes = [["light", "Light", Sun], ["dark", "Dark", Moon], ["system", "System", Laptop]] as const;
 
@@ -48,11 +52,11 @@ export function SettingsView() {
         </div>
       </Section>
       <Separator />
-      <Section id="appearance" title="Appearance" description="Choose how Bookmark Vault looks.">
+      <Section id="appearance" title="Appearance" description="Choose how rznish Bookmark Vault looks.">
         <div className="grid max-w-md grid-cols-3 gap-2" role="radiogroup" aria-label="Theme">
           {themes.map(([v, label, Icon]) => (
-            <button key={v} type="button" role="radio" aria-checked={theme === v} onClick={() => setTheme(v)}
-              className={cn("flex flex-col items-center gap-2 rounded-lg border bg-card px-3 py-4 text-sm transition-colors hover:bg-muted", theme === v && "border-primary bg-accent text-accent-foreground")}>
+            <button key={v} type="button" role="radio" aria-checked={current === v} onClick={() => setTheme(v)}
+              className={cn("flex flex-col items-center gap-2 rounded-lg border bg-card px-3 py-4 text-sm transition-colors hover:bg-muted", current === v && "border-primary bg-accent text-accent-foreground")}>
               <Icon className="size-5" />{label}
             </button>
           ))}

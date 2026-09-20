@@ -42,7 +42,7 @@ export function AppSidebar({ onNavigate }: { onNavigate?: () => void }) {
     <div className="flex h-full min-h-0 flex-col bg-sidebar">
       <div className="flex items-center gap-2 px-4 pb-2 pt-4">
         <span className="flex size-7 items-center justify-center rounded-md bg-primary text-primary-foreground"><Bookmark className="size-4" /></span>
-        <span className="text-[15px] font-semibold tracking-tight">Bookmark Vault</span>
+        <span className="text-[15px] font-semibold tracking-tight">rznish Bookmark</span>
       </div>
 
       <div className="px-3 pb-2 pt-1">

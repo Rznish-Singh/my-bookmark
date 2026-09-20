@@ -7,7 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: { default: "Bookmark Vault", template: "%s · Bookmark Vault" },
+  title: { default: "rznish Bookmark", template: "%s · Rznish Bookmark" },
   description: "Your saved links, organized your way.",
 };
 

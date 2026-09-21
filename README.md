@@ -1,5 +1,5 @@
 # rznish — My Bookmark Manager
-[![Watch Demo](https://player.cloudinary.com/embed/?cloud_name=dy4xybzrn&public_id=rznish_search_find_the_right_shadcn_ui_component_-_Brave_2026-09-20_23-43-16_eoxuro&profile=cld-default)
+[![Watch Demo](https://res.cloudinary.com/dy4xybzrn/video/upload/v1789954426/rznish_search_find_the_right_shadcn_ui_component_-_Brave_2026-09-20_23-43-16_eoxuro.mp4)
 
 **Open-source · Self-hosted · No data collection — You have full control.**
 
